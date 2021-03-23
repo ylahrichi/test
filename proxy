@@ -1,0 +1,7 @@
+Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("adresse du proxy", Integer.parseInt("8080")));
+URL url = new URL("https://xxx.xxx");
+HttpURLConnection conn = (HttpURLConnection) url.openConnection(proxy);
+conn.setDoOutput(true);
+conn.setRequestMethod("GET");
+conn.setRequestProperty("Authorization", "Basic MTgvQ0FNYXJvY0FQSTpDQU1hcm9jQVBJ");
+conn.setRequestProperty("Proxy-Authorization", "Basic mot de passe de la session codifié en base64");
